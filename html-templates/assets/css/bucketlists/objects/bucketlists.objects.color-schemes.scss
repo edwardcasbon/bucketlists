@@ -1,0 +1,23 @@
+/*------------------------------------*\
+    #COLOR SCHEMES
+\*------------------------------------*/
+
+/* Classes to include colour schemes in components
+ * Colour schemes are built in this partial: _isw.snippets.color-schemes.scss
+ */
+
+.scheme--white {
+    @include scheme--white;
+}
+
+.scheme--black {
+    @include scheme--black;
+}
+
+.scheme--red {
+    @include scheme--red;
+}
+
+.scheme--dark-grey {
+    @include scheme--dark-grey;
+}

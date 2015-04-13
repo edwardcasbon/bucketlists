@@ -1,0 +1,23 @@
+@mixin scheme--white {
+
+}
+
+@mixin scheme--black {
+
+}
+
+@mixin scheme--red {
+    background-color: color(red);
+
+    &, a {
+        color: color(white);
+    }
+}
+
+@mixin scheme--dark-grey {
+    background-color: color(black, dark);
+
+    &, a {
+        color: color(grey, light);
+    }
+}

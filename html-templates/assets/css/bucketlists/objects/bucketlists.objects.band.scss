@@ -1,0 +1,22 @@
+.band__inner-container,
+%band__inner-container {
+
+    width: auto;
+
+    @include padding(2, top);
+    @include padding(2, bottom);
+    @include padding(1, left);
+    @include padding(1, right);
+}
+
+.band__inner-container--tight,
+%band__inner-container--tight {
+    @include padding(1, top);
+    @include padding(1, bottom);
+}
+
+.band__inner-container--loose,
+%band__inner-container--loose {
+    @include padding(4, top);
+    @include padding(4, bottom);
+}

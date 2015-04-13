@@ -1,0 +1,50 @@
+/*------------------------------------*\
+    #BUTTON STYLES
+\*------------------------------------*/
+
+// These colors are !important as they should always apply no matter what color schemes they are nested in.
+.button,
+%button {
+    @include margin(1, bottom);
+    display: inline-block;
+    padding: $button-padding !important;
+    background-color: $button-background !important;
+    color: $button-color !important;
+    border-width: $button-border-width !important;
+    border-style: $button-border-style !important;
+    border-color: $button-border-color !important;
+    border-radius: $button-radius;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @include font-size(12px);
+    -webkit-font-smoothing: antialiased;
+    &:hover {
+      background-color: $button-hover-background !important;
+      color: $button-hover-color !important;
+      border-width: $button-hover-border-width;
+      border-style: $button-hover-border-style;
+      border-color: $button-hover-border-color;
+  }
+}
+
+.button--large,
+%button--large {
+  padding: $button-padding--large;
+}
+
+.button--small,
+%button--small {
+  padding: $button-padding--small;
+}
+
+.button--full-width,
+%button--full-width {
+  display: block;
+  text-align: center;
+}
+
+.button--inline,
+%button--inline {
+  display: inline;
+}

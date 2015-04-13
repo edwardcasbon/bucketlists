@@ -1,0 +1,13 @@
+{
+  "name": "Ingeniously Simple Web, from Redgate Software",
+  "homepage": "https://github.com/red-gate/ingeniously-simple-web",
+  "_release": "a16b849e2c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a16b849e2cb91244299d845f210ba8ea4e3d2c9a"
+  },
+  "_source": "git@github.com:red-gate/ingeniously-simple-web.git",
+  "_target": "*",
+  "_originalSource": "git@github.com:red-gate/ingeniously-simple-web.git"
+}

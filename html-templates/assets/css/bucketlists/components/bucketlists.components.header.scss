@@ -1,0 +1,35 @@
+header {
+    @include scheme--red;
+}
+
+header h1 {
+    @include margin(0, bottom);
+    @extend %beta;
+    text-transform: none;
+}
+
+header nav {
+    ul {
+        display: none;
+        @include margin(0, left);
+        @include margin(1, top);
+        list-style: none;
+    }
+    li {
+        @include margin(0);
+    }
+    a {
+        display: block;
+        @include padding(0.5, top);
+        @include padding(0.5, bottom);
+    }
+}
+
+header .burger {
+    display: block;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    @include padding(0.5);
+    background: color(red, dark);
+}

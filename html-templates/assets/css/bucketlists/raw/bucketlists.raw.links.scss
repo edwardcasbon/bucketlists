@@ -1,0 +1,24 @@
+/*------------------------------------*\
+    #LINKS
+\*------------------------------------*/
+
+/**
+ * Basic styles for raw unclassed links.
+ */
+
+a {
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: color(default-text);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: transparent;
+}
+
+a:visited { }
+
+a:focus { }
+
+a:active, a:hover {
+    border-bottom-color: color(border-color);
+}

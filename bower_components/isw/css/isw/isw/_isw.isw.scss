@@ -1,0 +1,56 @@
+/*------------------------------------*\
+    #ISW
+\*------------------------------------*/
+/**
+ * Basic styles for the default ISW isw.
+ */
+
+.band--isw .band__inner-container {
+    @include padding(2, top);
+    @include padding(0.5, bottom);
+}
+
+
+.section-heading--isw {
+    border-bottom: 1px solid #ccc;
+}
+
+
+/*------------------------------------*\
+    #COLOUR-CHIPS
+\*------------------------------------*/
+.colour-chips {
+    @extend %list--bare;
+    @extend %list--horizontal;
+    li {
+        text-align: center;
+        vertical-align: top;
+        @include rounded;
+        @include border;
+        @extend .padded;
+        height:8em;
+        width:19%;
+    }
+}
+
+
+.green-block {
+    background-color: color(green, lightest);
+}
+
+
+
+
+/*------------------------------------*\
+    #FOOTER
+\*------------------------------------*/
+.isw-footer {
+    .band {
+        @include padding(1, top);    
+        @include padding(1, bottom);     
+    }
+}
+
+
+
+

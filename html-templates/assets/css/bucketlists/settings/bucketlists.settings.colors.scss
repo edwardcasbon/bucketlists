@@ -1,0 +1,35 @@
+$site-colors: (
+    default-bg: (
+        base: #FFF /* default background colour */
+    ),
+    default-text: (
+        base: #2B2C2E /* default text colour */
+    ),
+    default-border: (
+        base: #dcdcdc /* default border colour */
+    ),
+    black: (
+        base: #000,
+        light: #666,
+        dark: #333
+    ),
+    white: (
+        base: #fff
+    ),
+    red: (
+        base: #EB4E47,
+        light: #D1463F,
+        dark: #D1463F
+    ),
+    green: (
+        base: #49B825
+    ),
+    grey: (
+        base: #CCC,
+        light: #EEE,
+        dark: #B3B9CF
+    ),
+    border-color: (
+        base: red
+    )
+);

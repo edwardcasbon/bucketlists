@@ -1,0 +1,7 @@
+// Remove extra vertical spacing when nesting lists.
+li {
+  > ul,
+  > ol {
+    @include margin(0, bottom);
+  }
+}

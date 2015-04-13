@@ -1,0 +1,22 @@
+.list--ui {
+    list-style: none;
+    @include margin(0, left);
+    li {
+        background-color: color(grey, light);
+        @include margin(0.25, bottom);
+    }
+    a {
+        display: block;
+        @include padding(0.5);
+    }
+}
+
+.list--actions {
+    @extend .list--ui;
+
+    font-size: 85%;
+
+    li, a {
+        display: inline-block;
+    }
+}

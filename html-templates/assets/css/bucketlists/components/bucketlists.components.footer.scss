@@ -1,0 +1,8 @@
+footer {
+    @include scheme--dark-grey;
+    font-size: 85%;
+
+    p {
+        @include margin(0, bottom);
+    }
+}

@@ -1,0 +1,6 @@
+{
+	"name": "Bucketlists",
+	"dependencies": {
+		"isw": "git@github.com:red-gate/ingeniously-simple-web.git"
+	}
+}
