@@ -1,0 +1,20 @@
+<h1>{{title}}</h1>
+
+<ul class="list--actions">
+    <li>
+        <a href="" ng-click="showForm = ! showForm">Create</a>
+    </li>
+</ul>
+
+<form ng-submit="forms.create.submit($event)" ng-show="showForm">
+    <label for="label">Label</label>
+    <input type="text" id="label" placeholder="New bucket label" ng-model="forms.create.label"></input>
+
+    <input type="submit" value="Create" />
+</form>
+
+<ul class="list--ui">
+    <li ng-repeat="bucket in buckets | orderBy: '-id'">
+        <a href="#/bucket/{{bucket.id}}">{{bucket.id}} - {{bucket.label}}</a>
+    </li>
+</ul>
