@@ -32,11 +32,39 @@ module.exports = function(grunt) {
             }
         },
 
+        /* JSHint - Check JS syntax */
+        jshint: {
+            options: {},
+            scripts: ['assets/js/**/*.js', '!assets/js/**/*.min.js'],
+        },
+
+        /* Uglify - Concatenate and minify JavaScript */
+        uglify: {
+            options: {
+                sourceMap: true,
+                mangle: true
+            },
+            scripts: {
+                files: {
+                    'assets/js/app.min.js' : [
+                        'assets/js/app.js',
+                        'assets/js/router.js',
+                        'assets/js/factories/**/*.js',
+                        'assets/js/controllers/**/*.js'
+                    ]
+                }
+            }
+        },
+
         /* Watch scss and js and process when they're updated */
         watch: {
             sass: {
                 files: ['html-templates/assets/css/**/*.scss', 'bower_components/isw/css/**/*.scss'],
                 tasks: ['sass', 'autoprefixer']
+            },
+            js: {
+                files: ['assets/js/*.js', 'assets/js/**/*.js', '!assets/js/**/*.min.js'],
+                tasks: ['jshint', 'uglify']
             }
         }
 
@@ -46,6 +74,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Register the default task.
     grunt.registerTask('default', 'watch');
