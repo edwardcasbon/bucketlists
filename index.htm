@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bucketlists</title>
+        <link rel="stylesheet" href="html-templates/assets/css/bucketlists.css" />
+    </head>
+    <body>
+
+        <header>
+            <div class="band__inner-container--tight">
+                <h1><a href="/">Bucketlists</a></h1>
+                <nav>
+                    <a class="burger" href="#">Menu</a>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Log in</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+
+                </nav>
+            </div>
+        </header>
+
+        <div class="band">
+            <div class="band__inner-container">
+                <div id="app"></div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="band__inner-container--tight">
+                <p>&copy; 2015 Bucketlists</p>
+            </div>
+        </footer>
+
+        <!-- Templates -->
+        <script type="text/template" class="home">
+            <h1><%- bl.title %></h1>
+
+            <!-- <div class="actions">
+                <ul class="list--actions">
+                    <li><a href="#">Add a bucket</a></li>
+                </ul>
+            </div> -->
+
+            <ul class="list--ui">
+                <% _.each(bl.buckets, function(bucket){ %>
+                    <li><a href="/#/bucket/<%- bucket.id %>"><%- bucket.label %></a></li>
+                <% }); %>
+            </ul>
+        </script>
+
+        <script type="text/template" class="bucket">
+            <p>This is the bucket page</p>
+            <p>Page: <%- bl.page %></p>
+
+            <ul class="list--ui">
+                <% _.each(bl.items, function(item){ %>
+                    <li><a href="/#/item/<%- item.id %>"><%- item.label %></a></li>
+                <% }); %>
+            </ul>
+        </script>
+
+
+        <!-- Script references -->
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="assets/js/vendor/underscore.js"></script>
+        <script src="assets/js/vendor/backbone.js"></script>
+
+        <script src="assets/js/app.min.js"></script>
+    </body>
+</html>
