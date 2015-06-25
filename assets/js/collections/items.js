@@ -1,6 +1,6 @@
-app.Items = Backbone.Collection.extend({
+app.ItemCollection = Backbone.Collection.extend({
 
-    model: app.Item,
+    model: app.ItemModel,
 
     params: {},
 

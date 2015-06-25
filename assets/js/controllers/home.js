@@ -1,9 +1,13 @@
-app.Home = Backbone.View.extend({
+app.HomeView = Backbone.View.extend({
 
     template: _.template($("script.home").html()),
 
     data: {
         title: "Buckets"
+    },
+
+    events: {
+        'click .create': '_showForm'
     },
 
     initialize: function() {
@@ -12,7 +16,7 @@ app.Home = Backbone.View.extend({
         this.render();
 
         // Create a buckets collection.
-        this.buckets = new app.Buckets();
+        this.buckets = new app.BucketCollection();
 
         // Listen to the buckets collection, and when updated, add the
         // buckets to the data object.
@@ -28,5 +32,10 @@ app.Home = Backbone.View.extend({
     render: function() {
         this.$el.html(this.template(this.data));
         return this;
+    },
+
+    _showForm: function(e) {
+        e.preventDefault();
+        console.log("Show the form");
     }
 });

@@ -1,3 +1,3 @@
-app.Item = Backbone.Model.extend({
+app.ItemModel = Backbone.Model.extend({
 
 });

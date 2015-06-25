@@ -1,4 +1,4 @@
-app.Bucket = Backbone.View.extend({
+app.BucketView = Backbone.View.extend({
 
     template: _.template($("script.bucket").html()),
 
@@ -6,20 +6,23 @@ app.Bucket = Backbone.View.extend({
 
     initialize: function(id) {
 
-        // Render the view with any data it has.
+        // Render the view.
         this.render();
 
-        // Create an items collection.
-        this.items = new app.Items({
-            bucketId: id
+        // Create a new buckets collection
+        this.bucket = new app.BucketModel(id);
+        this.listenTo(this.bucket, 'sync add remove change', function(){
+            this.data.bucket = this.bucket.toJSON();
+            this.render();
         });
+        this.bucket.fetch();
 
+        // Create an items collection.
+        this.items = new app.ItemCollection({bucketId: id});
         this.listenTo(this.items, 'sync add remove change', function(){
             this.data.items = this.items.toJSON();
             this.render();
         });
-
-        // Initially fetch the items collection from the API.
         this.items.fetch();
     },
 

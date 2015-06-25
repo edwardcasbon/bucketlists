@@ -1,6 +1,6 @@
-app.Buckets = Backbone.Collection.extend({
+app.BucketCollection = Backbone.Collection.extend({
 
-    model: app.Bucket,
+    model: app.BucketModel,
 
     url: function() {
         return app.Api.url + 'buckets?userId=' + app.User.id;

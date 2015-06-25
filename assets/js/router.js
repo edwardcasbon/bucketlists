@@ -7,17 +7,17 @@ var Router = Backbone.Router.extend({
     },
 
     home: function () {
-        var home = new app.Home();
+        var home = new app.HomeView();
         app.el.html(home.el);
     },
 
     bucket: function (id) {
-        var bucket = new app.Bucket(id);
+        var bucket = new app.BucketView(id);
         app.el.html(bucket.el);
     },
 
     item: function (id) {
-        var item = new app.Item(id);
+        var item = new app.ItemView(id);
         app.el.html(item.el);
     }
 });

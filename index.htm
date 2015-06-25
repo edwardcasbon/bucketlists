@@ -40,11 +40,18 @@
         <script type="text/template" class="home">
             <h1><%- bl.title %></h1>
 
-            <!-- <div class="actions">
-                <ul class="list--actions">
-                    <li><a href="#">Add a bucket</a></li>
-                </ul>
-            </div> -->
+            <ul class="list--actions">
+                <li>
+                    <a href="" class="create">Create</a>
+                </li>
+            </ul>
+
+            <form ng-submit="forms.create.submit($event)" ng-show="showForm">
+                <label for="label">Label</label>
+                <input type="text" id="label" placeholder="New bucket label" ng-model="forms.create.label"></input>
+
+                <input type="submit" value="Create" />
+            </form>
 
             <ul class="list--ui">
                 <% _.each(bl.buckets, function(bucket){ %>
@@ -54,8 +61,13 @@
         </script>
 
         <script type="text/template" class="bucket">
-            <p>This is the bucket page</p>
-            <p>Page: <%- bl.page %></p>
+            <h1>
+                <% if (typeof bl.bucket === 'undefined') { %>
+                    Default label
+                <% } else { %>
+                    <%- bl.bucket.label %>
+                <% } %>
+            </h1>
 
             <ul class="list--ui">
                 <% _.each(bl.items, function(item){ %>
